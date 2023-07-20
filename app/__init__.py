@@ -14,4 +14,8 @@ def create_app(config_class=Config):
 
     app.register_blueprint(main_bp)
 
+    from app.recordings import bp as recordings_bp
+
+    app.register_blueprint(recordings_bp, url_prefix="/recordings")
+
     return app
